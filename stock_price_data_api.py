@@ -38,7 +38,8 @@ for names in names_of_company_without_nan:
         next
 
 results = results.reset_index(drop=False)
-pd.DataFrame.to_csv(results, 'WIG_COMPANY.csv')
+results = pd.DataFrame(results)  
+#pd.DataFrame.to_csv(results, 'WIG_COMPANY.csv')
 
 
 #download data for WIG stock index
@@ -46,9 +47,9 @@ quandl.ApiConfig.api_key = 'AZ964MpikzEYAyLGfJD2'
 wig20 = quandl.get("WSE/WIG20")
 wig20 = pd.DataFrame(wig20)
 
-pd.DataFrame.to_csv(wig20, 'WIG20.csv')
+#pd.DataFrame.to_csv(wig20, 'WIG20.csv')
 
 wig = quandl.get("WSE/WIG")
 wig = pd.DataFrame(wig)
 
-pd.DataFrame.to_csv(wig, 'WIG.csv')
+#pd.DataFrame.to_csv(wig, 'WIG.csv')
